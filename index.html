@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MixTube - Mezcla dos canciones de youtube</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+
+    <meta property="og:image" content="https://vivirenremoto.github.io/mixtube/social.png">
+    <meta property="og:image:secure_url" content="https://vivirenremoto.github.io/mixtube/social.png">
+    <meta property="og:image:alt" content="MixTube - Mezcla dos canciones de youtube">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MixTube - Mezcla dos canciones de youtube">
+    <meta name="twitter:image" content="https://vivirenremoto.github.io/mixtube/social.png">
+
+</head>
+
+<body>
+
+    <style>
+        * {
+            font-family: arial;
+        }
+
+        .mashup {
+            border: 5px blue solid;
+            cursor: pointer;
+            width: 190px;
+            height: 190px;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+
+        @media screen and (max-width: 480px) {
+            iframe {
+                height: 170px;
+            }
+        }
+    </style>
+
+    <a href="https://twitter.com/vivirenremoto" target="_blank" style="position:absolute;right:20px;top:20px;">BY
+        @VIVIRENREMOTO</a>
+
+    <br>
+    <div id="alert" style="margin-top:25px;background:yellow;padding:15px;text-align:center;display:none">Te recomiendo
+        visitar la web
+        en un ordenador, en móvil youtube no me deja
+        autoreproducir los vídeos y tendrás que hacer clic en los dos vídeos</div>
+
+    <h1 style="text-align:center;">MixTube</h1>
+
+    <p align="center">Reproduce dos vídeos de youtube al mismo tiempo</p>
+
+
+    <p align="center"><button onclick="playMain()" style="font-weight:bold;font-size:20px;padding:20px 40px;"><svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+            </svg> Reproducir</button></p>
+
+    <br>
+
+    <div style="float:left;width:45%;margin-right:5%;">
+        <input id="input1" value="https://www.youtube.com/watch?v=WtkKraiWpUU" style="width:100%">
+
+        <br><br>
+        Start time
+        <br>
+        <input id="time1" value="4" style="width:100%">
+
+        <br><br>
+        <iframe style="background:black;width:100%" id="iframe1" width="560" height="315" src="javascript:;"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+    <div style="float:left;width:45%;margin-right:5%;">
+        <input id="input2" value="https://www.youtube.com/watch?v=oe-bJXZ_KGk" style="width:100%">
+
+        <br><br>
+        Start time
+        <br>
+        <input id="time2" value="50" style="width:100%">
+
+        <br><br>
+
+
+        <iframe style="background:black;width:100%" id="iframe2" width="560" height="315" src="javascript:;"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+    <br style="clear:both"><br>
+
+
+    <div style="background: yellow ;padding:15px;text-align:center;">
+        URL para compartir:
+        <input type="text" id="share" readonly="readonly" onclick="this.select()" size="30">
+    </div>
+
+
+    <h2 style="text-align:center;">Mashups</h2>
+
+    <br>
+
+    <!--dragon ball - podemos-->
+    <div class="mashup" onclick="play('WtkKraiWpUU','oe-bJXZ_KGk', 4, 50)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/WtkKraiWpUU/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/oe-bJXZ_KGk/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+    <!--rick - nirvana-->
+    <div class="mashup" onclick="play('5kYi_nyD1S4','ihfJlCa1Mq0', 26, 58)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/5kYi_nyD1S4/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/ihfJlCa1Mq0/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+    <!--eminem - faded-->
+    <div class="mashup" onclick="play('flOpHOPktzg','Rmtx9slmodw')">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/flOpHOPktzg/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/Rmtx9slmodw/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+    <!--billie - souja-->
+    <div class="mashup" onclick="play('3Lv30yFFwSo','JoRBAyYEbKY', 4, 12)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/3Lv30yFFwSo/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/JoRBAyYEbKY/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+
+
+    <!--eminem - sweet dreams-->
+    <div class="mashup" onclick="play('iqdEWk5y_Bw','WyLvc0-s_0Q', 37, 63)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/iqdEWk5y_Bw/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/WyLvc0-s_0Q/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+    <!--rihanna-->
+    <div class="mashup" onclick="play('B7JVMjB4F54','4T4VhUKuqBg', 3, 6)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/B7JVMjB4F54/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/4T4VhUKuqBg/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+    <!-- eminem - the script-->
+    <div class="mashup" onclick="play('Or_F0ulIX5g','cxnvqRs7pwI', 14, 17)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/Or_F0ulIX5g/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/cxnvqRs7pwI/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+    <!--bon jovi - coldplay-->
+    <div class="mashup" onclick="play('xTZCwbfFWrg','dYA6SwQholI', 69, 68)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/xTZCwbfFWrg/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/dYA6SwQholI/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+
+    <!--queen & mariah-->
+    <div class="mashup" onclick="play('geIXMeG7Dyk','MvNX5X-Dxbo', 35, 58)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/geIXMeG7Dyk/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/MvNX5X-Dxbo/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+
+    <!--queen & mariah-->
+    <div class="mashup" onclick="play('hwth77LgR7U','tZAsZMUKcFw', 31, 20)">
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/hwth77LgR7U/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+        <div
+            style="float:left;width:95px;height:190px;background:url('https://i3.ytimg.com/vi/tZAsZMUKcFw/hqdefault.jpg');background-size:auto 150%;background-position:center center">
+        </div>
+    </div>
+
+
+
+    <script>
+        var screen_width = $(document).width();
+        var separator = '------------';
+
+
+
+
+
+        if (document.location.href.indexOf('?') > -1) {
+            var url = document.location.href;
+            var t_url = url.split('?');
+            var code = window.atob(t_url[1]);
+            var t_code = code.split(separator);
+
+            $('#input1').val(t_code[0]);
+            $('#input2').val(t_code[1]);
+            $('#time1').val(t_code[2]);
+            $('#time2').val(t_code[3]);
+
+
+            if (screen_width >= 800) {
+                playMain();
+            }
+
+        }
+
+        $('input').change(function () {
+
+            console.log('test');
+            var code = '';
+
+            code += $('#input1').val();
+            code += separator;
+            code += $('#input2').val();
+            code += separator;
+            code += $('#time1').val();
+            code += separator;
+            code += $('#time2').val();
+
+            code = window.btoa(code);
+
+            var share_url = 'https://vivirenremoto.github.io/mixtube/?' + code;
+            $('#share').val(share_url);
+        });
+
+
+
+        if (screen_width < 800) {
+            $('#alert').show();
+        } else {
+            $('input').change();
+            playMain();
+        }
+
+        function change_link(url) {
+            return url.replace('https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/') + '?autoplay=1&rel=0&start=';
+        }
+
+        function playMain() {
+            var youtube1 = change_link($('#input1').val()) + $('#time1').val();
+            $('#iframe1').attr('src', youtube1);
+
+            var youtube2 = change_link($('#input2').val()) + $('#time2').val();
+            $('#iframe2').attr('src', youtube2);
+        }
+
+
+
+
+        function play(vid1, vid2, sec1, sec2) {
+
+            if (!sec1) sec1 = 0;
+            if (!sec2) sec2 = 0;
+
+            $('#time1').val(sec1);
+            $('#time2').val(sec2);
+
+            if (vid1.indexOf('youtube.com') == -1) vid1 = 'https://www.youtube.com/watch?v=' + vid1;
+            if (vid2.indexOf('youtube.com') == -1) vid2 = 'https://www.youtube.com/watch?v=' + vid2;
+
+            $('#input1').val(vid1);
+            $('#input2').val(vid2);
+
+            playMain();
+        }
+    </script>
+
+
+</body>
+
+</html>
