@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>MixTube - Mezcla dos canciones de youtube</title>
+    <title>MixTube - Mezcla dos canciones de youtube #dragoniglesias</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -43,8 +43,11 @@
         }
     </style>
 
-    <a href="https://twitter.com/vivirenremoto" target="_blank" style="position:absolute;right:20px;top:20px;">BY
-        @VIVIRENREMOTO</a>
+    <div style="position:absolute;right:20px;top:20px;">
+
+        <a href="javascript:share()">COMPARTIR</a> | <a href="https://twitter.com/vivirenremoto" target="_blank">BY
+            @VIVIRENREMOTO</a>
+    </div>
 
     <br>
     <div id="alert" style="margin-top:25px;background:yellow;padding:15px;text-align:center;display:none">Te recomiendo
@@ -313,6 +316,11 @@
             $('#input2').val(vid2);
 
             playMain();
+        }
+
+        function share() {
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&tw_p=tweetbutton&url=' + document.location.href);
+
         }
     </script>
 
