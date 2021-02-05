@@ -250,9 +250,7 @@
             $('#time2').val(t_code[3]);
 
 
-            if (screen_width >= 800) {
-                playMain();
-            }
+
 
         }
 
@@ -279,10 +277,10 @@
 
         if (screen_width < 800) {
             $('#alert').show();
-        } else {
-
-            playMain();
         }
+
+        playMain();
+
 
         function change_link(url) {
             return url.replace('https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/') + '?autoplay=1&rel=0&start=';
