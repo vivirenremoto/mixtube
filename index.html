@@ -267,7 +267,7 @@
         if (screen_width < 800) {
             $('#alert').show();
         } else {
-            $('input').change();
+
             playMain();
         }
 
@@ -281,6 +281,8 @@
 
             var youtube2 = change_link($('#input2').val()) + $('#time2').val();
             $('#iframe2').attr('src', youtube2);
+
+            $('input').change();
         }
 
 
